@@ -1,21 +1,27 @@
 // task 1 version 1
 let a = [1, 2, 3];
-let b = [4, 5, 6];
+let b = [4, 5, 6, 7];
 
-let message = a.length == b.length ? console.log("valid length of arrays") : console.log("invalid length of arrays");
-
+let message =
+    a.length == b.length ? console.log("the same length of arrays") : console.log("different length of arrays");
+let values = a.length >= b.length ? a : b;
 let resultOne = [];
 
-for (let i = 0; i < 3; i++) {
-    elemResult = a[i] * b[i];
-    resultOne.push(elemResult);
+for (let i = 0; i < values.length; i++) {
+    let validNumber = a[i] !== undefined ? a[i] : b[i];
+    let elemResult = a[i] * b[i];
+    if (isNaN(elemResult)) {
+        resultOne.push(validNumber);
+    } else {
+        resultOne.push(elemResult);
+    }
 }
 
 console.log(`First array: ${a}
 Second array: ${b}
 Result: ${resultOne}`);
 
-// //task 1 version 2
+//task 1 version 2
 
 let firstArr = [];
 let secondArr = [];
